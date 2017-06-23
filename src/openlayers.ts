@@ -57,7 +57,6 @@ export function updateSelection(name:string) {
     if (selected.length > 0) {
         const feature = selected[0];
         popupElement.innerHTML = feature.getProperties().name;
-        const geometry:any = feature.getGeometry();
-        popup.setPosition(geometry.getFirstCoordinate());
+        popup.setPosition((feature.getGeometry() as any).getFirstCoordinate());
     }
 }
