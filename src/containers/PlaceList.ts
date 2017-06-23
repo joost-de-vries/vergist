@@ -5,6 +5,7 @@ import { connect, Dispatch } from 'react-redux';
 import {select} from "../actions/index";
 import {updateSelection} from "../openlayers";
 import {PlaceList} from "../PlaceList";
+import './popup.css'
 
 export function mapStateToProps(state:StoreState)  {
     return {

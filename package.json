@@ -18,13 +18,16 @@
   "devDependencies": {
     "awesome-typescript-loader": "^3.0.4",
     "concurrently": "^3.5.0",
+    "css-loader": "^0.28.4",
     "source-map-loader": "^0.2.1",
+    "style-loader": "^0.18.2",
     "typescript": "^2.3.4",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.5.0"
   },
   "scripts": {
-    "watch":"webpack --progress --watch",
-    "server":"webpack-dev-server",
-    "dev": "concurrently --kill-others \"npm run watch\" \"npm run server\""  }
+    "watch": "webpack --progress --watch",
+    "server": "webpack-dev-server",
+    "dev": "concurrently --kill-others \"npm run watch\" \"npm run server\""
+  }
 }
