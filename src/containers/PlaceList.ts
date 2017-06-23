@@ -16,8 +16,8 @@ export function mapStateToProps(state:StoreState)  {
 // Map Redux actions to component props
 export function mapDispatchToProps(dispatch:Dispatch<actions.Action>) {
     return {
-        onSelectClick: function(e:any) {
-            const name = e.dispatchMarker.split('$')[1];
+        onSelectClick: function(e:MouseEvent) {
+            const name = e.fromElement.textContent!;
             dispatch(select(name));
             // Update map
             updateSelection(name);
