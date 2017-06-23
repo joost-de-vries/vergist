@@ -17,7 +17,7 @@ export function mapStateToProps(state:StoreState)  {
 export function mapDispatchToProps(dispatch:Dispatch<actions.Action>) {
     return {
         onSelectClick: function(e:MouseEvent) {
-            const name = e.fromElement.textContent!;
+            const name = (e.target as any).textContent;
             dispatch(select(name));
             // Update map
             updateSelection(name);
