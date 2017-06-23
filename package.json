@@ -5,9 +5,11 @@
   "dependencies": {
     "@types/jest": "^20.0.1",
     "@types/node": "^8.0.1",
+    "@types/openlayers": "^4.1.1",
     "@types/react": "^15.0.30",
     "@types/react-dom": "^15.5.0",
     "@types/react-redux": "^4.4.44",
+    "openlayers": "^4.2.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
