@@ -1,8 +1,7 @@
 
 import * as ol from "openlayers"
-import {store} from "./index";
-import {visiblePlaces} from "./actions/index";
-import {Place, placeName} from "./types/index";
+import {appState} from "./index";
+import {Place, placeName} from "./appstate";
 
 // OL map
 
@@ -44,8 +43,8 @@ map.addOverlay(popup);
 function updateVisiblePlaces() {
     const extent = map.getView().calculateExtent(map.getSize());
     const places = placeLayer.getSource().getFeaturesInExtent(extent).map((feature) => feature.getProperties()) as Place[];
-    // Update state in Redux store
-    store.dispatch(visiblePlaces(places))
+    // Update state in Mobx state
+    appState.places = places;
 }
 
 placeLayer.on('change', updateVisiblePlaces);
