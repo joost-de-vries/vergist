@@ -47,6 +47,7 @@ function updateVisiblePlaces() {
     // Update state in Redux store
     store.dispatch(visiblePlaces(places))
 }
+
 placeLayer.on('change', updateVisiblePlaces);
 map.on('moveend', updateVisiblePlaces);
 

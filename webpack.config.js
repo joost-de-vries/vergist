@@ -1,12 +1,29 @@
+var webpack = require('webpack');
 module.exports = {
-    entry: "./src/index.tsx",
+    entry: [
+        'react-hot-loader/patch',
+        // activate HMR for React
+
+        'webpack-dev-server/client?http://localhost:3000',
+        // bundle the client for webpack-dev-server
+        // and connect to the provided endpoint
+
+        'webpack/hot/only-dev-server',
+        "./src/index.tsx"
+    ],
     output: {
         filename: "bundle.js",
-        path: __dirname + "/dist"
+        path: __dirname + "/dist",
+        publicPath: '/dist'   // necessary for HMR to know where to load the hot update chunks
     },
 
     // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
+
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoEmitOnErrorsPlugin()
+    ],
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
@@ -33,4 +50,10 @@ module.exports = {
         "react": "React",
         "react-dom": "ReactDOM"
     },
+
+    devServer: {
+        host: 'localhost',
+        port: 3000,
+        hot: true, // Tell the dev-server we're using HMR
+    }
 };

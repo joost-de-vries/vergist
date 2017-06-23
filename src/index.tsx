@@ -8,8 +8,6 @@ import {placeSelector} from "./reducers/index"
 import { Provider } from 'react-redux';
 import { PlaceListContainer} from './containers/PlaceList'
 
-console.log("index.tsx")
-
 export const store = createStore<StoreState>(placeSelector, {
    places: []
 });
