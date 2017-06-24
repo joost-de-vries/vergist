@@ -21,7 +21,7 @@ export class PlaceList extends React.Component<{appState: AppState}, object> {
     }
 
     onSelectClick = (e:React.MouseEvent<HTMLLIElement>) => {
-            const name = (e.target as any).textContent;
+            const name = e.currentTarget.textContent!;
             this.props.appState.select(name);
             // Update map
             updateSelection(name);
