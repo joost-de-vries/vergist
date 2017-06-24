@@ -32,11 +32,10 @@ const map = new ol.Map({
 const popupElement:Element = document.getElementById('popup')!;
 const popup = new ol.Overlay({
     element: popupElement,
-    autoPan: true /* ,
+    autoPan: true  ,
     autoPanAnimation: {
-        duration: 250,
-        source:
-    } */
+        duration: 250
+    } as olx.animation.PanOptions
 });
 map.addOverlay(popup);
 
